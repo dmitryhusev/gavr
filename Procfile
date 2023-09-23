@@ -1,5 +1,4 @@
-chmod u+x release.sh
 
-release: ./release.sh
+release: chmod u+x release.sh && ./release.sh
 
 web: gunicorn gavr.wsgi --log-file -
