@@ -1,4 +1,4 @@
-chmod +x release.sh
+chmod u+x release.sh
 
 release: ./release.sh
 
