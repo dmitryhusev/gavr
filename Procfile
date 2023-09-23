@@ -1,5 +1,5 @@
-release: python manage.py makemigrations accounts
-release: python manage.py makemigrations
-release: python manage.py migrate
+chmod +x release.sh
 
-web: gunicorn gavr.wsgi
+release: ./release.sh
+
+web: gunicorn gavr.wsgi --log-file -
