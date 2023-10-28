@@ -13,9 +13,9 @@
 <a href="{% url 'account_logout' %}">Log Out</a>
 Hi {{ user.email }}!
 {% else %}
-<a class="btn btn-success" href="{% url 'account_login' %}">Log In</a>
-<a class="btn btn-success" href="{% url 'account_signup' %}">Sign Up</a>
-<a class="btn btn-success" href="{% provider_login_url 'google' %}">Google</a>
+<a href="{% url 'account_login' %}">Log In</a>
+<a href="{% url 'account_signup' %}">Sign Up</a>
+<a href="{% provider_login_url 'google' %}">Google</a>
 {% endif %}
 {% block content %}
 {% endblock %}
