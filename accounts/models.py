@@ -24,12 +24,12 @@ class UserManager(BaseUserManager):
         return user
 
 
-class Users(AbstractBaseUser, PermissionsMixin):
+class Profiles(AbstractBaseUser, PermissionsMixin):
 
     first_name = models.CharField(max_length=50, blank=True, null=True)
     last_name = models.CharField(max_length=50, blank=True, null=True)
     email = models.EmailField(max_length=100, unique=True)
-    is_active = models.BooleanField(default=True)
+    is_active = models.BooleanField(default=False)
     # is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True, blank=True, null=True)

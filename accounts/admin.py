@@ -1,11 +1,11 @@
-from .models import Users
+from .models import Profiles
 
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 
 
-class CustomUserAdmin(UserAdmin):
-    model = Users
+class UserAdmin(UserAdmin):
+    model = Profiles
     list_display = ("email", "id", "first_name", "last_name", "is_superuser", "is_active")
     list_filter = ()
     ordering = ("-id",)
@@ -20,4 +20,4 @@ class CustomUserAdmin(UserAdmin):
             ),
         )
 
-admin.site.register(Users, CustomUserAdmin)
+admin.site.register(Profiles, UserAdmin)
