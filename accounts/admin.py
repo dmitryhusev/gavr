@@ -4,20 +4,21 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 
 
-class UserAdmin(UserAdmin):
+class ProfileAdmin(UserAdmin):
     model = Profiles
     list_display = ("email", "id", "first_name", "last_name", "is_superuser", "is_active")
     list_filter = ()
     ordering = ("-id",)
     fieldsets = ()
     add_fieldsets = (
-            (
-                None,
-                {
-                    'classes': ('wide',),
-                    'fields': ('email', 'password1', 'password2'),
-                },
-            ),
-        )
+        (
+            None,
+            {
+                'classes': ('wide',),
+                'fields': ('email', 'password1', 'password2'),
+            },
+        ),
+    )
 
-admin.site.register(Profiles, UserAdmin)
+
+admin.site.register(Profiles, ProfileAdmin)

@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.google',
     # custom apps
     'accounts',
+    'posts',
 ]
 
 MIDDLEWARE = [
@@ -146,6 +147,8 @@ AUTHENTICATION_BACKENDS = (
     # `allauth` specific authentication methods, such as login by e-mail
     "allauth.account.auth_backends.AuthenticationBackend",
 )
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / "media"
 
 SITE_ID = 1
 ACCOUNT_EMAIL_REQUIRED = True

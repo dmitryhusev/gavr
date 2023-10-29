@@ -1,4 +1,25 @@
 {% extends 'base.html' %}
+
 {% block content %}
 
+<a href="{%url 'add_post'%}">Add post</a>
+<ul>
+
+  {% for post in object_list %}
+	<div class="post container">
+		<div class="container">
+			<div class="post_title">{{ post.title }}</div>
+			<div>{{post.date_added}}</div>
+		</div>
+
+		{% if post.image %}
+		<img src="{{ post.image.url}}" alt="{{ post.title }} " height='800' width='600'>
+	{% endif %}
+			<div>{{post.body}}</div>
+	</div>
+
+  {% endfor %}
+</ul>
 {% endblock content %}
+
+
