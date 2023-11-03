@@ -18,12 +18,13 @@
 header {
     padding: 20px 20px;
     border-radius: 5px;
-    background-color: rgb(247, 207, 107);
+    background-color: rgb(49, 48, 47);
 }
 
 a {
     text-decoration: none;
     font-size: 20px;
+    color: white;
 }
 
 .logout {
@@ -50,3 +51,39 @@ header a + a:before{
     color: rgb(242, 123, 44);
     border-radius: 2px;
 }
+
+button {
+    background-color: rgb(17, 212, 238);
+    height: 36px;
+    width: 80px;
+    border-radius: 5px;
+    font-size: 16px;
+    border: none;
+    opacity: 80%;
+}
+
+input {
+    height: 26px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+}
+
+#id_image {
+    
+    /* display: inline-block; */
+    /* padding: none; */
+    /* padding-top: 6px; */
+    /* width: 180px; */
+    height: 21px;
+    cursor: pointer;
+    /* text-align: center; */
+}
+
+textarea {
+    border: 1px solid #ccc;
+    
+}
+
+/* .signup p input {
+    width: 300px;
+} */
