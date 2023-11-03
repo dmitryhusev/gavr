@@ -1,4 +1,4 @@
-from django.views.generic import ListView, CreateView
+from django.views.generic import ListView, CreateView, DeleteView
 from .models import Post
 from django.urls import reverse_lazy
 from .forms import PostForm
@@ -19,3 +19,8 @@ class CreatePostView(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
+
+class DeletePostView(DeleteView):
+    model = Post
+    template_name = "post_delete.html"
+    success_url = reverse_lazy("index")

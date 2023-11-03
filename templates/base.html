@@ -1,43 +1,31 @@
-
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>app</title>
-	<style>
-		.post {
-			width: 600px;
-			height: 900px;
-			border: 1px solid grey;
-			padding: 20px;
-			margin: 10px auto;
-			border-radius: 1%;
-		.container {
-            display: flex;
-            justify-content: space-between;
-			padding: 5px;
 
-		}
-		.post_title {
-			font-size: 20px;
-		}
-}
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+        <title>app</title>
+    </head>
+    <body>
+        <header>
+            <a href="/">Home</a>
+            {% load socialaccount %} {% if user.is_authenticated %}
+            <a class="add_post" href="{%url 'add_post'%}">Add post</a>
+            <a class="logout" href="{% url 'account_logout' %}">Log Out</a>
+            {% else %}</div>
+            <a href="{% url 'account_login' %}">Log In</a>
+            <a href="{% url 'account_signup' %}">Sign Up</a>
+            <a href="{% provider_login_url 'google' %}">Google</a>
+            {% endif %} 
+        </header>
+        {% if user.is_authenticated %}
+        <div class="user">Hi {{ user.email }}</div>
+        {% endif %} 
 
-</style>
-</head>
-<a href="/">Home</a>
-<body>
-{% load socialaccount %}
+            {% block content %} {% endblock %}
 
-{% if user.is_authenticated %}
-<a class="logout" href="{% url 'account_logout' %}">Log Out</a>
-Hi {{ user.email }}!
-{% else %}
-<a href="{% url 'account_login' %}">Log In</a>
-<a href="{% url 'account_signup' %}">Sign Up</a>
-<a href="{% provider_login_url 'google' %}">Google</a>
-{% endif %}
-{% block content %}
-{% endblock %}
-</body>
+
+    
+    </body>
 </html>

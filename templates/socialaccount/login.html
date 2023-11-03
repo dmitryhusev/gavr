@@ -1,11 +1,9 @@
-{% extends 'base.html' %}
-
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 
 <p>You are about to sign in using Google</p>
 
 <form method="post">
-  {% csrf_token %}
-  <button type="submit">Continue</button>
+    {% csrf_token %}
+    <button type="submit">Continue</button>
 </form>
 {% endblock %}
