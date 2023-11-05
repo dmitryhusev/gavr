@@ -164,3 +164,7 @@ ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_UNIQUE_EMAIL = True
 LOGIN_REDIRECT_URL = 'index'
 ACCOUNT_LOGOUT_REDIRECT_URL = 'index'
+
+ACCOUNT_FORMS = {
+'signup': 'accounts.forms.CustomSignupForm',
+}
