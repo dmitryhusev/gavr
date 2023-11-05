@@ -5,7 +5,7 @@ from .forms import PostForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 
-class HomePageView(ListView):
+class HomePageView(LoginRequiredMixin, ListView):
     model = Post
     template_name = "index.html"
 
@@ -19,6 +19,7 @@ class CreatePostView(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
+
 
 class DeletePostView(DeleteView):
     model = Post

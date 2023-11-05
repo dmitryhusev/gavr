@@ -36,7 +36,6 @@ header a + a:before{
     padding: 0 5px;
 }
 
-
 .user {
     margin-top: 10px;
     text-align: end;
@@ -70,18 +69,11 @@ input {
 }
 
 #id_image {
-    
-    /* display: inline-block; */
-    /* padding: none; */
-    /* padding-top: 6px; */
-    /* width: 180px; */
     height: 21px;
     cursor: pointer;
-    /* text-align: center; */
 }
 
 textarea {
     border: 1px solid #ccc;
     
 }
-
