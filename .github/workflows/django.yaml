@@ -19,7 +19,7 @@ jobs:
     - name: install java
     - uses: browser-actions/setup-chrome@v1
     - run: chrome --version
-      run: sudo apt-get install default-jre
+    - run: sudo apt-get install default-jre
     - name: Set up Python
       uses: actions/setup-python@v3
       with:
