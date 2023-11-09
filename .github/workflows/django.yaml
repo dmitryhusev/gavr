@@ -36,9 +36,9 @@ jobs:
     - name: Run server 
       run: gunicorn gavr.wsgi --daemon
     - name: Install curl
-        run: sudo apt-get install curl
+      run: sudo apt-get install curl
     - name: Health check
-        run: curl localhost:8000
+      run: curl localhost:8000
     - name: Run Tests
       run: |
         pytest -sv --tb=short --alluredir=allure_results
