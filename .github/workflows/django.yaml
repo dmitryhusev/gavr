@@ -16,8 +16,8 @@ jobs:
     steps:
 
     - uses: actions/checkout@v3
-    - name: install java
     - uses: browser-actions/setup-chrome@v1
+    - name: install java
     - run: sudo apt-get install default-jre
     - name: Set up Python
       uses: actions/setup-python@v3
