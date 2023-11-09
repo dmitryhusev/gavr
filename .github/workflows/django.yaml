@@ -2,7 +2,7 @@ name: Django CI
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "main" ]
    
 env:
   DJANGO_ALLOWED_HOSTS: ${{ vars.DJANGO_ALLOWED_HOSTS }}
