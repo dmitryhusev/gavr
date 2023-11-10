@@ -16,14 +16,15 @@
             {% else %}</div>
             <a href="{% url 'account_login' %}">Log In</a>
             <a href="{% url 'account_signup' %}">Sign Up</a>
-            {% comment %} <a href="{% provider_login_url 'google' %}">Via Google</a> {% endcomment %}
+            {% if app_mode %} <a href="{% provider_login_url 'google' %}">Via Google</a> {% endif %}
             {% endif %} 
         </header>
+
         {% if user.is_authenticated %}
         <div class="user">Hi {{ user.email }}</div>
         {% endif %} 
 
-            {% block content %} {% endblock %}
+        {% block content %} {% endblock %}
 
 
     
