@@ -18,7 +18,7 @@ class Page:
         self.element(locator).click()
 
     def navigate(self):
-        self.browser.get(url='http://localhost:8003')
+        self.browser.get(url='http://localhost:8000')
 
     def enter_text(self, locator, text):
         self.element(locator).send_keys(text)
