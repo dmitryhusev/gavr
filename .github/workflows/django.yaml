@@ -46,8 +46,10 @@ jobs:
       if: always()
       run: npm install -g allure-commandline --save-dev
     - name: Generate allure report
+      if: always()
       run: allure generate allure_results/ -o allure_report
     - name: Upload allure
+      if: always()
       uses: actions/upload-artifact@v3
       with:
         name: upload_allure
