@@ -16,7 +16,7 @@
             {% else %}</div>
             <a href="{% url 'account_login' %}">Log In</a>
             <a href="{% url 'account_signup' %}">Sign Up</a>
-            <a href="{% provider_login_url 'google' %}">Via Google</a>
+            {% comment %} <a href="{% provider_login_url 'google' %}">Via Google</a> {% endcomment %}
             {% endif %} 
         </header>
         {% if user.is_authenticated %}
