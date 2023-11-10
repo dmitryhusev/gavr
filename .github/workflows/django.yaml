@@ -30,7 +30,9 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
     - name: Make migrations
-      run: python manage.py makemigrations
+      run: |
+        python manage.py makemigrations accounts
+        python manage.py makemigrations
     - name: Migrate
       run: python manage.py migrate
     - name: Run server 
