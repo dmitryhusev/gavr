@@ -25,7 +25,7 @@ load_dotenv()
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False#os.getenv('DEBUG', False)
+DEBUG = os.getenv('DEBUG', False)
 print(type(os.getenv('DJANGO_ALLOWED_HOSTS')))
 ALLOWED_HOSTS = (os.getenv('DJANGO_ALLOWED_HOSTS').split(' '))
 
