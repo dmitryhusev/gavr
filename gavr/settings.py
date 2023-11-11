@@ -25,8 +25,7 @@ load_dotenv()
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DEBUG', False)
-print(type(os.getenv('DJANGO_ALLOWED_HOSTS')))
+DEBUG = int(os.getenv('DEBUG', False))
 ALLOWED_HOSTS = (os.getenv('DJANGO_ALLOWED_HOSTS').split(' '))
 
 
@@ -91,7 +90,7 @@ DATABASES = {
         "USER": os.getenv("SQL_USER"),
         "PASSWORD": os.getenv("SQL_PASSWORD"),
         "HOST": os.getenv("SQL_HOST"),
-        "PORT": os.getenv("SQL_PORT"),
+        "PORT": 5432,
     }
 }
 
