@@ -25,7 +25,7 @@ load_dotenv()
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = int(os.getenv('DEBUG', False))
+DEBUG = int(os.getenv('DEBUG'))
 ALLOWED_HOSTS = (os.getenv('DJANGO_ALLOWED_HOSTS').split(' '))
 
 
@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     # custom apps
     'accounts',
     'posts',
+    
 ]
 
 MIDDLEWARE = [
