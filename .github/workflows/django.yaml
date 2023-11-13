@@ -9,7 +9,7 @@ env:
   SQL_ENGINE: django.db.backends.sqlite3
   SQL_DATABASE: test.db
   SECRET_KEY: ${{ vars.DJANGO_SECRET_KEY }}
-  DEBUG: ${{DEBUG}}
+  DEBUG: ${{vars.DEBUG}}
 
 jobs:
   build:
