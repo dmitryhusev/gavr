@@ -21,7 +21,8 @@ services:
     env_file: .env
     volumes:
       - .:/app/
-      - media:/app/media
+      - /var/www/gavr/media:/var/www/gavr/media
+      - /var/www/gavr/static:/var/www/gavr/static
     command:
       - /bin/sh
       - -c
@@ -42,3 +43,4 @@ services:
 volumes:
   postgres_data:
   media:
+  static:

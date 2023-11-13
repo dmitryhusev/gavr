@@ -136,7 +136,7 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 STATIC_ROOT = '/var/www/gavr/static'
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = '/media'
+MEDIA_ROOT = '/var/www/gavr/media'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
@@ -170,3 +170,5 @@ ACCOUNT_LOGOUT_REDIRECT_URL = 'index'
 ACCOUNT_FORMS = {
 'signup': 'accounts.forms.CustomSignupForm',
 }
+
+CSRF_TRUSTED_ORIGINS = ['http://localhost']
