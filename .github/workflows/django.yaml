@@ -21,11 +21,12 @@ jobs:
     - name: check ssh connection
       run: |
           cd ~
+          pwd
           ls -la
+          cd .ssh
           touch id_file
           echo "$SSH_KEY" > id_file
           chmod 600 id_file
-          ls -la
           ssh dimtri@161.35.208.55 -v
 
 #    - uses: actions/checkout@v3
