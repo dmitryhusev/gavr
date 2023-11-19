@@ -15,8 +15,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-        - name: Print whoami
-          run: whoami
+        - name: Print hostname
+          run: hostname
 
 #    - uses: actions/checkout@v3
 #    - uses: browser-actions/setup-chrome@v1
