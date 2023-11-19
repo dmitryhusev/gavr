@@ -10,13 +10,15 @@ env:
   SQL_DATABASE: test.db
   SECRET_KEY: ${{ vars.DJANGO_SECRET_KEY }}
   DEBUG: ${{vars.DEBUG}}
-
+  KEY: ${{vars.SSH_KEY}}
+  USER: ${{vars.SSH_USER}}
+  HOST: ${{vars.SSH_HOST}}
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-        - name: check ssh
-          run: ssh --help
+        - name: check ssh connection
+          run: ssh dimtri@161.35.208.55
 
 #    - uses: actions/checkout@v3
 #    - uses: browser-actions/setup-chrome@v1
