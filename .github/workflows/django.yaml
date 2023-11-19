@@ -20,6 +20,8 @@ jobs:
     steps:
         - name: check ssh connection
           run: |
+            cd ~
+            cd .ssh
             touch id_file
             echo "$SSH_KEY" > id_file
             chmod 600 id_file
