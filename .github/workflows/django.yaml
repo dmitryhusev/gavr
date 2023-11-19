@@ -20,8 +20,10 @@ jobs:
         - name: check ssh connection
           run: |
             touch id_file
-            echo $SSH_KEY > id_file
+            echo $KEY
+            echo $KEY > id_file
             ls -la
+            echo "+++++"
             cat id_file
             ssh -i id_file dimtri@161.35.208.55
 
