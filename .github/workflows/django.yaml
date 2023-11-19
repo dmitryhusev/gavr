@@ -21,7 +21,7 @@ jobs:
         - name: check ssh connection
           run: |
             touch id_file
-            echo "${{vars.SSH_KEY}}" > id_file
+            echo "${{vars.KEY}}" > id_file
             chmod 600 id_file
             ls -la
             ssh -tt -i id_file -o StrictHostKeyChecking=no dimtri@161.35.208.55
