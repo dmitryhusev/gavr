@@ -15,8 +15,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-        - name: Print hostname
-          run: hostname
+        - name: check ssh
+          run: ssh --help
 
 #    - uses: actions/checkout@v3
 #    - uses: browser-actions/setup-chrome@v1
