@@ -24,8 +24,7 @@ jobs:
           pwd
           mkdir .ssh
           cd .ssh
-          touch id_rsa
-          echo "$SSH_KEY" > id_file
+          echo "$SSH_KEY" > id_rsa
           pwd
           ls -la
           chmod 600 id_file
