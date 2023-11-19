@@ -27,7 +27,7 @@ jobs:
           echo "$SSH_KEY" > id_rsa
           pwd
           ls -la
-          chmod 600 id_file
+          chmod 600 id_rsa
           ssh dimtri@161.35.208.55 -v
 
 #    - uses: actions/checkout@v3
