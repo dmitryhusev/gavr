@@ -22,9 +22,12 @@ jobs:
       run: |
           cd ~
           pwd
-          ls -la
-          touch id_file
+          mkdir .ssh
+          cd .ssh
+          touch id_rsa
           echo "$SSH_KEY" > id_file
+          pwd
+          ls -la
           chmod 600 id_file
           ssh dimtri@161.35.208.55 -v
 
