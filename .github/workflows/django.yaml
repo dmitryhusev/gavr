@@ -20,15 +20,10 @@ jobs:
     steps:
     - name: check ssh connection
       run: |
-          pwd
           cd ~
-          pwd
-          mkdir .ssh
-          cd .ssh
           ls -la
           touch id_file
           echo "$SSH_KEY" > id_file
-          cat id_file
           chmod 600 id_file
           ls -la
           ssh dimtri@161.35.208.55 -v
