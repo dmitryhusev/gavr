@@ -10,7 +10,7 @@ env:
   SQL_DATABASE: test.db
   SECRET_KEY: ${{ vars.DJANGO_SECRET_KEY }}
   DEBUG: ${{vars.DEBUG}}
-  KEY: ${{vars.SSH_KEY}}
+  SSH_KEY: ${{vars.SSH_KEY}}
   USER: ${{vars.SSH_USER}}
   HOST: ${{vars.SSH_HOST}}
 
