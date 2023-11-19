@@ -18,15 +18,16 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-        - name: check ssh connection
-          run: |
-            cd ~
-            cd .ssh
-            touch id_file
-            echo "$SSH_KEY" > id_file
-            chmod 600 id_file
-            ls -la
-            ssh -tt -i id_file -o StrictHostKeyChecking=no dimtri@161.35.208.55 -vvv
+    - name: check ssh connection
+      run: |
+        cd ~
+        mkdir .ssh        
+        cd .ssh
+        touch id_file
+        echo "$SSH_KEY" > id_file
+        chmod 600 id_file
+        ls -la
+        ssh -tt -i id_file -o StrictHostKeyChecking=no dimtri@161.35.208.55 -vvv
 
 #    - uses: actions/checkout@v3
 #    - uses: browser-actions/setup-chrome@v1
