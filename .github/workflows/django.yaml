@@ -20,7 +20,9 @@ jobs:
         - name: check ssh connection
           run: |
             touch id_file
-            echo $SSh_KEY > id_file
+            echo $SSH_KEY > id_file
+            ls -la
+            cat id_file
             ssh -i id_file dimtri@161.35.208.55
 
 #    - uses: actions/checkout@v3
