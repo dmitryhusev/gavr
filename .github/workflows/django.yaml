@@ -25,7 +25,7 @@ jobs:
             ls -la
             echo "+++++"
             cat id_file
-            ssh -i id_file dimtri@161.35.208.55
+            ssh -tt -i id_file dimtri@161.35.208.55
 
 #    - uses: actions/checkout@v3
 #    - uses: browser-actions/setup-chrome@v1
