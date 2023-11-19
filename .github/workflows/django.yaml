@@ -24,7 +24,7 @@ jobs:
         echo "$SSH_KEY" > id_file
         chmod 600 id_file
         ls -la
-        ssh -tt -i id_file -o StrictHostKeyChecking=no UserKnownHostsFile=/dev/null dimtri@161.35.208.55 -vvv
+        ssh -tt -i id_file -o "StrictHostKeyChecking=no" dimtri@161.35.208.55 -vvv
 
 #    - uses: actions/checkout@v3
 #    - uses: browser-actions/setup-chrome@v1
