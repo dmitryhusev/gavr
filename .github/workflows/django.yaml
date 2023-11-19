@@ -20,6 +20,8 @@ jobs:
     steps:
     - name: check ssh connection
       run: |
+          pwd
+          
         cd ~
         mkdir .ssh
         cd .ssh
