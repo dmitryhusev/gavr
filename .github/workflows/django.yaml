@@ -13,6 +13,7 @@ env:
   KEY: ${{vars.SSH_KEY}}
   USER: ${{vars.SSH_USER}}
   HOST: ${{vars.SSH_HOST}}
+
 jobs:
   build:
     runs-on: ubuntu-latest
