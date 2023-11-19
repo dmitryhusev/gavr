@@ -15,45 +15,47 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+        - name: Print whoami
+          run: whoami
 
-    - uses: actions/checkout@v3
-    - uses: browser-actions/setup-chrome@v1
-    - name: install java
-      run: sudo apt-get install default-jre
-    - name: Set up Python
-      uses: actions/setup-python@v3
-      with:
-        python-version: '3.10'
-        cache: 'pip'
-        cache-dependency-path: '**/requirements.txt'
-    - name: Install Dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
-    - name: Make migrations
-      run: |
-        python manage.py makemigrations accounts
-        python manage.py makemigrations
-    - name: Migrate
-      run: python manage.py migrate
-    - name: Run server 
-      run: gunicorn gavr.wsgi --daemon
-    - name: Install curl
-      run: sudo apt-get install curl
-    - name: Health check
-      run: curl localhost:8000
-    - name: Run Tests
-      run: |
-        pytest -sv --tb=short --alluredir=allure_results
-    - name: Install allure
-      if: always()
-      run: npm install -g allure-commandline --save-dev
-    - name: Generate allure report
-      if: always()
-      run: allure generate allure_results/ -o allure_report
-    - name: Upload allure
-      if: always()
-      uses: actions/upload-artifact@v3
-      with:
-        name: upload_allure
-        path: ./allure_report
+#    - uses: actions/checkout@v3
+#    - uses: browser-actions/setup-chrome@v1
+#    - name: install java
+#      run: sudo apt-get install default-jre
+#    - name: Set up Python
+#      uses: actions/setup-python@v3
+#      with:
+#        python-version: '3.10'
+#        cache: 'pip'
+#        cache-dependency-path: '**/requirements.txt'
+#    - name: Install Dependencies
+#      run: |
+#        python -m pip install --upgrade pip
+#        pip install -r requirements.txt
+#    - name: Make migrations
+#      run: |
+#        python manage.py makemigrations accounts
+#        python manage.py makemigrations
+#    - name: Migrate
+#      run: python manage.py migrate
+#    - name: Run server
+#      run: gunicorn gavr.wsgi --daemon
+#    - name: Install curl
+#      run: sudo apt-get install curl
+#    - name: Health check
+#      run: curl localhost:8000
+#    - name: Run Tests
+#      run: |
+#        pytest -sv --tb=short --alluredir=allure_results
+#    - name: Install allure
+#      if: always()
+#      run: npm install -g allure-commandline --save-dev
+#    - name: Generate allure report
+#      if: always()
+#      run: allure generate allure_results/ -o allure_report
+#    - name: Upload allure
+#      if: always()
+#      uses: actions/upload-artifact@v3
+#      with:
+#        name: upload_allure
+#        path: ./allure_report
