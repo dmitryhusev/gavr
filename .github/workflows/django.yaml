@@ -30,11 +30,10 @@ jobs:
 #          chmod 600 .ssh/*
 #          cd .ssh
 #          ssh -o "StrictHostKeyChecking no" -i id_ed25519 dimtri@161.35.208.55 -v
-
-          mkdir -p ~/.ssh/
-          echo "{{ vars.SSH_KEY }}" > ~/.ssh/private.key
-          chmod 600 ~/.ssh/private.key
-          ssh -i ~/.ssh/private.key -o "StrictHostKeyChecking no" ${{ vars.USER }}@${{ vars.HOST }} whoami
+           mkdir -p ~/.ssh/
+           echo "{{ vars.SSH_KEY }}" > ~/.ssh/private.key
+           chmod 600 ~/.ssh/private.key
+           ssh -i ~/.ssh/private.key -o "StrictHostKeyChecking no" ${{ vars.USER }}@${{ vars.HOST }} whoami
 
 
 
