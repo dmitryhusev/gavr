@@ -22,7 +22,7 @@ jobs:
     - name: check ssh connection
       run: |
         mkdir -p ~/.ssh
-        echo "{{ vars.SSH_KEY }}" > ~/.ssh/private.key
+        echo "${{ secrets.DO_SECRET }}" > ~/.ssh/private.key
         chmod 600 ~/.ssh/private.key
         ssh -i ~/.ssh/private.key -o "StrictHostKeyChecking no" dimtri@161.35.208.55 -vvv
 
