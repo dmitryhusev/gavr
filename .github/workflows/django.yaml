@@ -26,7 +26,8 @@ jobs:
         chmod 600 ~/.ssh/private.key
         ssh -i ~/.ssh/private.key -o "StrictHostKeyChecking no" dimtri@161.35.208.55 '
           cd gavr
-          ls -la
+          git pull
+          docker-compose restart
           '
           
 
