@@ -24,7 +24,7 @@ jobs:
         mkdir -p ~/.ssh
         echo "${{ secrets.DO_SECRET }}" > ~/.ssh/private.key
         chmod 600 ~/.ssh/private.key
-        ssh -i ~/.ssh/private.key -o "StrictHostKeyChecking no" dimtri@161.35.208.55 hostname
+        ssh -i ~/.ssh/private.key -o "StrictHostKeyChecking no" dimtri@161.35.208.55 ls -la
 
 #    - uses: actions/checkout@v3
 #    - uses: browser-actions/setup-chrome@v1
