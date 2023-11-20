@@ -171,4 +171,4 @@ ACCOUNT_FORMS = {
 'signup': 'accounts.forms.CustomSignupForm',
 }
 
-CSRF_TRUSTED_ORIGINS = ['http://localhost', 'http://161.35.208.55']
+CSRF_TRUSTED_ORIGINS = ['http://localhost', 'http://161.35.208.55', 'https://gav-rik.com']
