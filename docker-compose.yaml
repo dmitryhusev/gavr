@@ -30,7 +30,7 @@ services:
         ./manage.py makemigrations
         ./manage.py migrate
         ./manage.py collectstatic --no-input
-        gunicorn gavr.wsgi --bind 0.0.0.0:8000
+        gunicorn -c gunicorn.py
     ports:
       - 8000:8000
     environment:
