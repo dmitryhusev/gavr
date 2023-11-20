@@ -27,6 +27,7 @@ jobs:
           cd .ssh
           echo "$SSH_KEY" > id_ed25519
           echo "$SSH_KEY_PUB" > id_ed25519.pub
+          cd ..
           chmod 700 .ssh
           chmod 600 .ssh/*
           ssh -o "StrictHostKeyChecking no" -i id_ed25519 dimtri@161.35.208.55 -v
