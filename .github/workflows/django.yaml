@@ -24,7 +24,7 @@ jobs:
         mkdir -p ~/.ssh
         echo "{{ vars.SSH_KEY }}" > ~/.ssh/private.key
         chmod 600 ~/.ssh/private.key
-        ssh -i ~/.ssh/private.key -o "StrictHostKeyChecking no" ${{ vars.USER }}@${{ vars.HOST }} -vvv
+        ssh -i ~/.ssh/private.key -o "StrictHostKeyChecking no" dimtri@161.35.208.55 -vvv
 
 #          cd ~
 #          pwd
