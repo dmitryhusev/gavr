@@ -20,7 +20,7 @@ services:
     container_name: app-django
     env_file: .env
     volumes:
-      - .:/app/
+#      - .:/app/
       - /var/www/gavr/media:/var/www/gavr/media
       - /var/www/gavr/static:/var/www/gavr/static
     command:
@@ -30,9 +30,9 @@ services:
         ./manage.py makemigrations
         ./manage.py migrate
         ./manage.py collectstatic --no-input
-        gunicorn --bind 0.0.0.0:8000
+        gunicorn gavr.wsgi --bind 0.0.0.0:8000
     ports:
-      - 8003:8000
+      - 8000:8000
     environment:
       - SECRET_KEY=${SECRET_KEY}
       - DJANGO_ALLOWED_HOSTS=${DJANGO_ALLOWED_HOSTS}
