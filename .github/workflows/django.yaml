@@ -11,6 +11,7 @@ env:
   SECRET_KEY: ${{ vars.DJANGO_SECRET_KEY }}
   DEBUG: ${{vars.DEBUG}}
   SSH_KEY: ${{vars.SSH_KEY}}
+  SSH_KEY_PUB: ${{vars.SSH_KEY_PUB}}
   USER: ${{vars.SSH_USER}}
   HOST: ${{vars.SSH_HOST}}
 
@@ -25,6 +26,7 @@ jobs:
           mkdir .ssh
           cd .ssh
           echo "$SSH_KEY" > id_rsa
+          echo "$SSH_KEY_PUB" > id_rsa.pub
           pwd
           ls -la
           chmod 600 id_rsa
