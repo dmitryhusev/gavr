@@ -20,17 +20,16 @@ services:
     container_name: app-django
     env_file: .env
     volumes:
-#      - .:/app/
       - /var/www/gavr/media:/var/www/gavr/media
       - /var/www/gavr/static:/var/www/gavr/static
     command:
       - /bin/sh
       - -c
       - |
-        ./manage.py makemigrations
-        ./manage.py migrate
-        ./manage.py collectstatic --no-input
-        ./manage.py runserver 0.0.0.0:8000
+        echo "fake migrations"
+#        ./manage.py makemigrations
+#        ./manage.py migrate
+#        ./manage.py collectstatic --no-input
 #        gunicorn -c gunicorn.py
     ports:
       - 8000:8000
