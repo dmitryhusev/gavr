@@ -24,11 +24,11 @@ jobs:
         mkdir -p ~/.ssh
         echo "${{ secrets.DO_SECRET }}" > ~/.ssh/private.key
         chmod 600 ~/.ssh/private.key
-        ssh -i ~/.ssh/private.key -o "StrictHostKeyChecking no" dimtri@161.35.208.55 '
+        ssh -i ~/.ssh/private.key -o "StrictHostKeyChecking no" dimtri@206.81.26.36 '
           cd gavr
-          git pull
-          docker-compose restart
-          '
+          git pull'
+#          docker-compose restart
+#          '
           
 
 #    - uses: actions/checkout@v3
