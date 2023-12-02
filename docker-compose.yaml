@@ -26,11 +26,9 @@ services:
       - /bin/sh
       - -c
       - |
-        echo "fake migrations"
-#        ./manage.py makemigrations
-#        ./manage.py migrate
-#        ./manage.py collectstatic --no-input
-#        gunicorn -c gunicorn.py
+        ./manage.py makemigrations
+        ./manage.py collectstatic --no-input
+        gunicorn -c gunicorn.py
     ports:
       - 8000:8000
     environment:
