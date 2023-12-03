@@ -20,8 +20,8 @@ services:
     container_name: app-django
     env_file: .env
     volumes:
-      - ~/www/gavr/media:/var/www/gavr/media
-      - ~/www/gavr/static:/var/www/gavr/static
+      - /var/www/gavr/media:/var/www/gavr/media
+      - /var/www/gavr/static:/var/www/gavr/static
     command:
       - /bin/sh
       - -c
