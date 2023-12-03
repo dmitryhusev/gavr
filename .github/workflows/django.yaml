@@ -25,9 +25,9 @@ jobs:
         echo "${{ secrets.SSH_SECRET }}" > ~/.ssh/private.key
         chmod 600 ~/.ssh/private.key
         ssh -i ~/.ssh/private.key -o "StrictHostKeyChecking no" root@165.227.134.110 '
-          cd gavr
+          cd /app/gavr
           git pull
-          docker-compose -f docker-compose.yaml up --build -d
+          docker compose -f docker-compose.yaml up --build -d
           '
           
 
