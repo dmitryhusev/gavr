@@ -22,11 +22,13 @@ services:
     volumes:
       - /var/www/gavr/media:/var/www/gavr/media
       - /var/www/gavr/static:/var/www/gavr/static
+      - /var/log/gunicorn/error.log:/var/log/gunicorn/error.log
     command:
       - /bin/sh
       - -c
       - |
         ./manage.py makemigrations
+        ./manage.py migrate
         ./manage.py collectstatic --no-input
         gunicorn -c gunicorn.py
     ports:
