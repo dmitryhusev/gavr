@@ -22,7 +22,7 @@ services:
     volumes:
       - /var/www/gavr/media:/var/www/gavr/media
       - /var/www/gavr/static:/var/www/gavr/static
-      - /var/log/gunicorn/error.log:/var/log/gunicorn/error.log
+      - /var/log/gunicorn:/var/log/gunicorn
     command:
       - /bin/sh
       - -c
