@@ -27,7 +27,7 @@ jobs:
         ssh -i ~/.ssh/private.key -o "StrictHostKeyChecking no" root@192.241.159.188 '
           cd /home/gavr
           git pull
-          docker compose -f docker-compose.yaml up --build -d
+          docker-compose -f docker-compose.yaml up --build -d
           '
           
 
