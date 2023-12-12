@@ -7,7 +7,7 @@
             <div>{{post.date_added}}</div>
         </div>
         {% if post.image %}
-        <img src="{{ post.image.url}}" alt="{{ post.title }} " height="600" width="800" />
+        <img src="{{ post.image.url}}" alt="{{ post.title }} " height="800" width="600" />
         {% endif %}
         <div>{{post.body}}</div>
             <p class="delete_post"><a href="{% url 'post_delete' post.pk %}">Delete</a></p>
