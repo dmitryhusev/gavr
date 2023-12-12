@@ -8,6 +8,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 class HomePageView(LoginRequiredMixin, ListView):
     model = Post
     template_name = "index.html"
+    ordering = '-date_added'
 
 
 class CreatePostView(LoginRequiredMixin, CreateView):
