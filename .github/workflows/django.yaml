@@ -19,16 +19,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: check ssh connection
-      run: |
-        mkdir -p ~/.ssh
-        echo "${{ secrets.SSH_SECRET }}" > ~/.ssh/private.key
-        chmod 600 ~/.ssh/private.key
-        ssh -i ~/.ssh/private.key -o "StrictHostKeyChecking no" root@192.241.159.188 '
-          cd /home/gavr
-          git pull
-          docker-compose -f docker-compose.yaml up --build -d
-          '
     - uses: actions/checkout@v3
     - uses: browser-actions/setup-chrome@v1
     - name: install java
@@ -58,6 +48,16 @@ jobs:
     - name: Run Tests
       run: |
         pytest -sv --tb=short --alluredir=allure_results
+    - name: deploy
+      run: |
+        mkdir -p ~/.ssh
+        echo "${{ secrets.SSH_SECRET }}" > ~/.ssh/private.key
+        chmod 600 ~/.ssh/private.key
+        ssh -i ~/.ssh/private.key -o "StrictHostKeyChecking no" root@192.241.159.188 '
+          cd /home/gavr
+          git pull
+          docker-compose -f docker-compose.yaml up --build -d
+          '
     - name: Install allure
       if: always()
       run: npm install -g allure-commandline --save-dev
