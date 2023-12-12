@@ -1,6 +1,6 @@
 .post {
-    width: 1920px;
-    height: 1080px;
+    width: 1200px;
+    height: 900px;
     padding: 20px;
     background-color: rgb(231, 240, 240);
     margin: 10px auto;
@@ -78,7 +78,6 @@ textarea {
     
 }
 
-.pagination {
-    background-color: rgb(17, 212, 238);
-
+image {
+    max-width:100%; height:auto
 }
