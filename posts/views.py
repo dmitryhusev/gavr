@@ -9,7 +9,7 @@ class HomePageView(LoginRequiredMixin, ListView):
     model = Post
     template_name = "index.html"
     ordering = '-date_added'
-    paginate_by = 2
+    paginate_by = 10
 
 
 class CreatePostView(LoginRequiredMixin, CreateView):
