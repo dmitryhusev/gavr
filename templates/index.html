@@ -20,8 +20,8 @@
 <div class="pagination">
     <span class="step-links">
         {% if page_obj.has_previous %}
-            <a href="?page=1" style="color:blue">&laquo; first</a>
-            <a href="?page={{ page_obj.previous_page_number }}" style="color:blue">previous</a>
+            <a href="?page=1" style="color:blue">начало</a>
+            <a href="?page={{ page_obj.previous_page_number }}" style="color:blue">назад</a>
         {% endif %}
 
         <span class="current">
@@ -30,8 +30,8 @@
         <br>
 
         {% if page_obj.has_next %}
-            <a href="?page={{ page_obj.next_page_number }}" style="color:blue">next</a>
-            <a href="?page={{ page_obj.paginator.num_pages }}" style="color:blue">last &raquo;</a>
+            <a href="?page={{ page_obj.next_page_number }}" style="color:blue">вперед</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}" style="color:blue">конец</a>
         {% endif %}
     </span>
 </div>
